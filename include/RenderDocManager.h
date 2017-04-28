@@ -4,9 +4,9 @@
 #include <Windows.h>
 
 #ifdef _WIN64
-static const char* DEFAULT_RENDERDOC_DLL = "c:/Program Files/RenderDoc/x86/renderdoc.dll";
-#else
 static const char* DEFAULT_RENDERDOC_DLL = "c:/Program Files/RenderDoc/renderdoc.dll";
+#else
+static const char* DEFAULT_RENDERDOC_DLL = "c:/Program Files/RenderDoc/x86/renderdoc.dll";
 #endif
 
 class RenderDocManager
@@ -38,7 +38,7 @@ bool RenderDocManager::setup(const char* pCapturePath, const char* pRenderDocPat
     {
         m_Api->SetLogFilePathTemplate(pCapturePath);
 
-        RENDERDOC_InputButton captureKey = eRENDERDOC_Key_F12;
+        RENDERDOC_InputButton captureKey = eRENDERDOC_Key_F11;
         m_Api->SetCaptureKeys(&captureKey, 1);
         m_Api->SetFocusToggleKeys(NULL, 0);
 
